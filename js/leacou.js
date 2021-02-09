@@ -5,6 +5,7 @@ AV.init({
 });
 
 window.$docsify = {
+  name: '源氏跑酷',
   auto2top: true,
   maxLevel: 4,
   subMaxLevel: 2,
@@ -24,9 +25,12 @@ window.$docsify = {
 
 function getLevel() {
   let url = window.location.href;
-  let levelstr = url.substring(url.indexOf("/#/") + 3)
-  if (levelstr) {
-    switch (levelstr) {
+  if(url.indexOf("?id")!=-1){
+    url = url.substring(0,url.indexOf("?id"));
+  }
+  let level = url.substring(url.indexOf("/#/") + 3)
+  if (level) {
+    switch (level) {
       case "easy":
         return 0;
       case "easy+":
@@ -73,5 +77,7 @@ function getWorldcodes(content, next) {
       content += temp.join("\r\n");
       next(content);
     });
+  }else{
+    next(content);
   }
 }
