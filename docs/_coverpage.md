@@ -1,6 +1,6 @@
 <!-- _coverpage.md -->
 
-![logo](_ow/icon.svg)
+![logo](ow/icon.svg)
 
 # 跑酷代码收集 <small>2.0</small>
 
