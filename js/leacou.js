@@ -74,5 +74,4 @@ function getWorldcodes(content, next) {
       next(content);
     });
   }
-  next(content);
 }
