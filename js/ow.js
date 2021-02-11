@@ -68,7 +68,9 @@ function ow(hook, vm) {
     hook.doneEach(() => {
 
     })
-    hook.mounted(() => {})
+    hook.mounted(() => {
+
+    })
 }
 window.$docsify = window.$docsify || {}
 window.$docsify.plugins = [ow].concat(window.$docsify.plugins || [])
