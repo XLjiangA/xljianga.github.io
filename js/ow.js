@@ -39,13 +39,10 @@ function ow(hook, vm) {
     })
     hook.beforeEach((content, next) => {
         let _Level = getLevel(vm)
-        let _author = vm.route.query['author']
-        if (_author) {
-            _author = _author.replace("?id", "")
-        } else _author = ""
         if (_Level != -1) {
             let query = new AV.Query('codes')
             query.equalTo('level', _Level)
+            query.limit(500)
             query.find().then((list) => {
                 let temp = []
                 list.forEach(value => {
